@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+function fail_bootstrapping {
+  echo "\033[1m\033[31mBootstrapping failed!\033[0m\n\033[31m${1}\033[0m"
+  exit 1
+}
+
+function fail_dependency {
+  fail_bootstrapping "Please install ${1} and try again"
+}
+
+git --version >/dev/null 2>&1 || fail_dependency "git"
+ruby -v >/dev/null 2>&1 || fail_dependency "ruby"
+
+ruby_version=(`ruby -v | sed 's/^ruby //' | sed 's/[^0-9\.].*$//' | tr '.' ' '`)
+if [ ${ruby_version[0]} -eq 1 ]; then
+  if [ ${ruby_version[1]} != 9 ] || [ ${ruby_version[2]} -lt 3 ] ; then
+    fail_bootstrapping "Please upgrade Ruby version to >= 1.9.3"
+  fi
+fi
+
+if ! bundle -v >/dev/null 2>&1; then
+  sudo gem install bundler || fail_dependency "bundler"
+fi
+
+mkdir casa
+cd casa
+git clone https://github.com/AppSharing/casa-environment.git
+cd casa-environment
+
+sed 's/"path": "dev",/"path": "..",/g' config/dev.json > config/dev.json.tmp
+mv config/dev.json config/dev.json.bak
+mv config/dev.json.tmp config/dev.json
+git update-index --assume-unchanged config/dev.json
+
+bundle install --without mssql
+bundle exec thor env:dev:setup
