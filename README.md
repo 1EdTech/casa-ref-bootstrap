@@ -20,7 +20,7 @@ The full text of the license may be found in the `LICENSE` file.
 The environment may be downloaded and setup with the following command:
 
 ```
-curl -L -0 http://appsharing.github.io/casa-bootstrap/dev | sh -s
+curl -L -0 http://imsglobal.github.io/casa-bootstrap/dev | sh -s
 ```
 
 This will create a `casa` directory with a number of locally linked gem repositories underneath.
@@ -31,4 +31,4 @@ The next thing that one must do is configure the gems they wish to run. This can
 bundle exec thor env:dev:configure
 ```
 
-See [casa-environment](https://github.com/AppSharing/casa-environment) for more details.
+See [casa-environment](https://github.com/IMSGlobal/casa-environment) for more details.
