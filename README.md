@@ -1,8 +1,17 @@
 # CASA Bootstrap
 
-A bootstrapper that sets up an environment for the CASA reference implementation.
+The [Community App Sharing Architecture (CASA)](http://imsglobal.github.io/casa) provides a mechanism for
+discovering and sharing metadata about web resources such as websites, mobile
+apps and LTI tools. It models real-world decision-making through extensible
+attributes, filter and transform operations, flexible peering relationships,
+etc.
 
-See [casa-environment](https://githug.com/AppSharing/casa-environment) for more details.
+This is a bootstrapper for the CASA reference implementation.
+
+## License
+
+This software is **open-source** and licensed under the Apache 2 license.
+The full text of the license may be found in the `LICENSE` file.
 
 ## Usage
 
