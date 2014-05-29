@@ -20,7 +20,7 @@ The full text of the license may be found in the `LICENSE` file.
 The environment may be downloaded and setup with the following command:
 
 ```
-curl -L -0 http://appsharing.github.io/casa-bootstrap/dev | sh -s
+curl -L -0 http://imsglobal.github.io/casa-bootstrap/local | sh -s
 ```
 
 This will create a `casa` directory with a number of locally linked gem repositories underneath.

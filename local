@@ -28,10 +28,7 @@ cd casa
 git clone https://github.com/IMSGlobal/casa-environment.git
 cd casa-environment
 
-sed 's/"path": "dev",/"path": "..",/g' config/dev.json > config/dev.json.tmp
-mv config/dev.json config/dev.json.bak
-mv config/dev.json.tmp config/dev.json
-git update-index --assume-unchanged config/dev.json
+sed 's/"path": "dev",/"path": "..",/g' config/dev.json > config/local.json
 
 bundle install --without mssql
-bundle exec thor env:dev:setup
+bundle exec casa-environment setup -c local.json
