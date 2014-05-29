@@ -31,4 +31,4 @@ cd casa-environment
 sed 's/"path": "dev",/"path": "..",/g' config/dev.json > config/local.json
 
 bundle install --without mssql
-bundle exec casa-environment setup -c local.json
+bundle exec casa-environment setup -c config/local.json

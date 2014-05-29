@@ -25,10 +25,11 @@ curl -L -0 http://imsglobal.github.io/casa-bootstrap/local | sh -s
 
 This will create a `casa` directory with a number of locally linked gem repositories underneath.
 
-The next thing that one must do is configure the gems they wish to run. This can be done by hand or with the `casa-environment` gem. To use the latter, navigate to `casa/casa-environment`. From within this directory, edit `config/dev.json` as desired and then call:
+The next thing that one must do is configure the gems they wish to run. This can be done by hand or with the `casa-environment` gem. To use the latter, navigate to `casa/casa-environment`. From within this directory, edit `config/local.json` and then call the `casa-environment configure` command on it.
 
 ```
-bundle exec thor env:dev:configure
+cd casa/casa-environment
+bundle exec casa-environment configure
 ```
 
-See [casa-environment](https://github.com/AppSharing/casa-environment) for more details.
+See [casa-environment](https://github.com/IMSGlobal/casa-environment) for more details.
