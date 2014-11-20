@@ -20,7 +20,7 @@ The full text of the license may be found in the `LICENSE` file.
 The environment may be downloaded and setup with the following command:
 
 ```
-curl -L -0 http://imsglobal.github.io/casa-bootstrap/local | sh -s
+curl -L -0 http://imsglobal.github.io/casa-ref-bootstrap/local | sh -s
 ```
 
 This will create a `casa` directory with a number of locally linked gem repositories underneath.
@@ -32,4 +32,4 @@ cd casa/casa-environment
 bundle exec casa-environment configure
 ```
 
-See [casa-environment](https://github.com/IMSGlobal/casa-environment) for more details.
+See [casa-environment](https://github.com/IMSGlobal/casa-ref-environment) for more details.
