@@ -26,7 +26,7 @@ fi
 mkdir casa
 cd casa
 git clone https://github.com/IMSGlobal/casa-ref-environment.git
-cd casa-environment
+cd casa-ref-environment
 
 sed 's/"path": "dev",/"path": "..",/g' config/dev.json > config/local.json
 
